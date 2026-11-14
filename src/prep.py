@@ -167,6 +167,24 @@ def add_channel_features(videos: pd.DataFrame) -> pd.DataFrame:
     return videos
 
 
+PERIOD_BREAK = "2018-03-01"
+PERIODS = ["Nov 2017 – Feb 2018", "Mar – Jun 2018"]
+
+
+def add_period(videos: pd.DataFrame) -> pd.DataFrame:
+    """Periodo en que el video llegó a tendencia.
+
+    Desde marzo de 2018 la lista de tendencias se comporta distinto (menos videos nuevos,
+    con más vistas y más días en la lista; ver notebook 03), así que se comparan por separado.
+    """
+    videos = videos.copy()
+    late = videos["first_trending_date"] >= PERIOD_BREAK
+    videos["period"] = pd.Categorical(
+        np.where(late, PERIODS[1], PERIODS[0]), categories=PERIODS, ordered=True
+    )
+    return videos
+
+
 def add_features(videos: pd.DataFrame) -> pd.DataFrame:
     return (
         videos.pipe(add_publish_features)

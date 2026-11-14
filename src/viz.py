@@ -52,7 +52,9 @@ def _compact(x, _pos=None) -> str:
     for limit, suffix in ((1e9, "B"), (1e6, "M"), (1e3, "K")):
         if abs(x) >= limit:
             value = x / limit
-            return f"{value:.0f}{suffix}" if value == int(value) else f"{value:.1f}{suffix}"
+            if suffix == "K" or value == int(value):
+                return f"{value:.0f}{suffix}"
+            return f"{value:.1f}{suffix}"
     return f"{x:.0f}"
 
 

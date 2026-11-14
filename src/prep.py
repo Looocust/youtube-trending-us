@@ -192,3 +192,29 @@ def add_features(videos: pd.DataFrame) -> pd.DataFrame:
         .pipe(add_engagement_features)
         .pipe(add_channel_features)
     )
+
+
+def add_channel_history(videos: pd.DataFrame) -> pd.DataFrame:
+    """Historial del canal usando solo videos que llegaron a tendencia ANTES que el actual.
+
+    A diferencia de `channel_videos`, estas variables no usan información del futuro,
+    así que sirven como predictores.
+    """
+    videos = videos.sort_values(["first_trending_date", "video_id"]).copy()
+    grouped = videos.groupby("channel_title")
+
+    # Los videos del mismo canal que llegan el mismo día no cuentan como historia entre sí.
+    order = grouped.cumcount()
+    same_day = videos.groupby(["channel_title", "first_trending_date"]).cumcount()
+    videos["channel_prev_videos"] = order - same_day
+
+    def past_mean(column: str) -> pd.Series:
+        daily = videos.groupby(["channel_title", "first_trending_date"])[column].agg(["sum", "count"])
+        cumulative = daily.groupby(level=0).cumsum() - daily
+        mean = (cumulative["sum"] / cumulative["count"].where(cumulative["count"] > 0)).rename("value")
+        return videos.join(mean, on=["channel_title", "first_trending_date"])["value"]
+
+    videos["channel_prev_log_views"] = past_mean("log_views_last")
+    videos["channel_prev_days"] = past_mean("days_trending")
+    videos["channel_is_new"] = videos["channel_prev_videos"] == 0
+    return videos

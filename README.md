@@ -23,10 +23,11 @@ Se sigue CRISP-DM. Cada notebook cubre una etapa:
 | `03_analisis_exploratorio` | Comprensión de los datos | Categorías, engagement, efecto de la fecha de publicación |
 | `04_clustering` | Modelado | Segmentación de videos |
 | `05_modelos_predictivos` | Modelado y evaluación | Predicción de vistas y likes, importancia de variables |
+| `06_pronostico_tendencias` | Modelado y evaluación | Pronóstico exploratorio del nivel de la lista a 14 días |
 
 ## Entregables
 
-- **Notebooks:** los cinco de la tabla anterior, en `notebooks/`, ya ejecutados.
+- **Notebooks:** los seis de la tabla anterior, en `notebooks/`, ya ejecutados.
 - **Presentación:** [reports/presentacion.pptx](reports/presentacion.pptx), 10 slides con metodología, respuestas, modelos y recomendaciones.
 
 ## Estructura

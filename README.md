@@ -24,6 +24,11 @@ Se sigue CRISP-DM. Cada notebook cubre una etapa:
 | `04_clustering` | Modelado | Segmentación de videos |
 | `05_modelos_predictivos` | Modelado y evaluación | Predicción de vistas y likes, importancia de variables |
 
+## Entregables
+
+- **Notebooks:** los cinco de la tabla anterior, en `notebooks/`, ya ejecutados.
+- **Presentación:** [reports/presentacion.pptx](reports/presentacion.pptx), 10 slides con metodología, respuestas, modelos y recomendaciones.
+
 ## Estructura
 
 ```

@@ -10,6 +10,26 @@ Prueba práctica de ciencia de datos. Una empresa va a lanzar su marca en Estado
 4. ¿Influye la fecha u hora de publicación?
 5. ¿Se pueden predecir las vistas o los likes de un video?
 
+## Resultados principales
+
+Se analizaron 6.347 videos que estuvieron en tendencia entre noviembre de 2017 y junio de 2018.
+
+| Pregunta | Respuesta |
+|---|---|
+| Categorías con más vistas y likes | **Gaming y Música** tienen el mayor alcance por video (más de 1 millón de vistas y cerca de 40 mil likes de mediana). **Entertainment** es la de mayor presencia (25% de la lista) y **Howto & Style** la de mayor interacción (4 likes por cada 100 vistas). |
+| Agrupaciones de videos | Cinco segmentos de comportamiento con K-Means: grandes éxitos, comunidad fiel, medios recurrentes, polémicos y llegada lenta. Son estables, aunque sus fronteras no son nítidas (silueta de 0,18). |
+| Qué hace que un video dure en tendencia | Quién lo publica y qué tipo de contenido es. Título, etiquetas y horario casi no influyen. El dataset solo contiene videos que ya llegaron a tendencia, así que no se puede modelar qué separa a los que llegan de los que no. |
+| Influencia de la fecha de publicación | Poca. Los videos publicados en fin de semana tienen un 16% más de vistas que un video comparable; la hora no influye. No se puede medir estacionalidad anual con siete meses de datos. |
+| Predicción de vistas y likes | Antes de publicar, solo de forma gruesa (R² de 0,21 en vistas, error típico de un factor de 2,2). Con los datos del primer día en tendencia, con precisión (R² de 0,85 en vistas y 0,95 en likes). |
+
+Otros hallazgos:
+
+- **El canal es el factor que más pesa.** Entre canales con dos o más videos, explica el 62% de la variación de las vistas.
+- **La lista de tendencias cambia en marzo de 2018:** entra la mitad de videos nuevos, con más del triple de vistas y el doble de días en la lista. Todas las comparaciones se hacen dentro de cada periodo.
+- **Pronóstico exploratorio:** un modelo SARIMA proyecta el nivel de la lista a 14 días con un error típico del 7,7%.
+
+![Vistas, likes e interacción por categoría](reports/figures/03_categorias.png)
+
 ## Metodología
 
 Se sigue CRISP-DM. Cada notebook cubre una etapa:

@@ -26,7 +26,6 @@ Se sigue CRISP-DM. Cada notebook cubre una etapa:
 ## Entregables
 
 - **Notebooks:** los seis de la tabla anterior, en `notebooks/`, ya ejecutados.
-- **Presentación:** [reports/presentacion.pptx](reports/presentacion.pptx), 10 slides con metodología, respuestas, modelos y recomendaciones.
 
 ## Estructura
 
@@ -36,7 +35,7 @@ Se sigue CRISP-DM. Cada notebook cubre una etapa:
 │   └── processed/    # datasets limpios generados por los notebooks
 ├── notebooks/        # análisis paso a paso
 ├── src/              # funciones compartidas de carga y limpieza
-└── reports/          # figuras y presentación
+└── reports/          # figuras generadas por los notebooks
 ```
 
 ## Datos

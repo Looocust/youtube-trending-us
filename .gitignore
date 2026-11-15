@@ -20,3 +20,6 @@ venv/
 
 # Enunciado de la prueba (solo local)
 docs/
+
+# Presentación (se entrega aparte)
+reports/*.pptx

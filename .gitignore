@@ -17,3 +17,6 @@ venv/
 
 # Archivos temporales de Office
 ~$*
+
+# Enunciado de la prueba (solo local)
+docs/

@@ -2,8 +2,6 @@
 
 Prueba práctica de ciencia de datos. Una empresa va a lanzar su marca en Estados Unidos y quiere posicionar su canal de YouTube. Este análisis busca entender qué caracteriza a los videos en tendencia para orientar la estrategia de contenido y la eventual elección de sponsors.
 
-El enunciado completo está en [docs/enunciado.pdf](docs/enunciado.pdf).
-
 ## Preguntas que responde
 
 1. ¿Qué categorías reciben más vistas y likes?
@@ -38,8 +36,7 @@ Se sigue CRISP-DM. Cada notebook cubre una etapa:
 │   └── processed/    # datasets limpios generados por los notebooks
 ├── notebooks/        # análisis paso a paso
 ├── src/              # funciones compartidas de carga y limpieza
-├── reports/          # figuras y presentación
-└── docs/             # enunciado de la prueba
+└── reports/          # figuras y presentación
 ```
 
 ## Datos
